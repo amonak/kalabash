@@ -191,7 +191,7 @@ label {
     display: none;
 }
 
-/* div#navigate-navbar-collapse.navbar-collapse {*/
+/* div#navigate-navbar-collapse.navbar-collapse { */
 /*     z-index: 9999; */
 /* } */
 html body div.navbar div.container-fluid div#navigate-navbar-collapse.collapse ul.nav li.dropdown a.dropdown-toggle{

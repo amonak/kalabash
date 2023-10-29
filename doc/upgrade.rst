@@ -145,7 +145,7 @@ Specific instructions
 * Support for Postgres 11 has been dropped, minimum Postgres version is now 12
 
 You need to change the first line in ``urls.py`` and replace `url` with `path` (in
-(``/srv/kalabash/instance/instance/urls.py`` by default):
+``/srv/kalabash/instance/instance/urls.py`` by default):
 
 .. sourcecode:: python
 
