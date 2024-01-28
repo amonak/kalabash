@@ -33,3 +33,4 @@ test_project/kalabash.db
 # Misc
 .ash_history
 kalabash.kdev4
+.kateproject

@@ -75,6 +75,8 @@ class DomainAPITestCase(KbashAPITestCase):
     @mock.patch("socket.getaddrinfo")
     def test_create_domain_with_mx_check(self, mock_getaddrinfo, mock_query):
         """Check domain creation when MX check is activated."""
+        mock_query.side_effect = utils.mock_dns_query_result
+        mock_getaddrinfo.side_effect = utils.mock_ip_query_result
         self.set_global_parameter("enable_admin_limits", False, app="limits")
         self.set_global_parameter("valid_mxs", "192.0.2.1 2001:db8::1")
         self.set_global_parameter("domains_must_have_authorized_mx", True)
@@ -84,8 +86,6 @@ class DomainAPITestCase(KbashAPITestCase):
         self.client.credentials(HTTP_AUTHORIZATION="Token " + token.key)
 
         url = reverse("v1:domain-list")
-        mock_query.side_effect = utils.mock_dns_query_result
-        mock_getaddrinfo.side_effect = utils.mock_ip_query_result
         response = self.client.post(
             url, {"name": "no-mx.example.com", "quota": 0,
                   "default_mailbox_quota": 10}
@@ -677,6 +677,17 @@ class AliasAPITestCase(KbashAPITestCase):
         data["address"] = "@test.com"
         response = self.client.post(url, data, format="json")
         self.assertEqual(response.status_code, 201)
+
+    def test_create_duplicate_alias(self):
+        url = reverse("v1:alias-list")
+        response = self.client.post(url, self.ALIAS_DATA, format="json")
+        self.assertEqual(response.status_code, 201)
+
+        # Try with same address but different case
+        data = copy.deepcopy(self.ALIAS_DATA)
+        data["address"] = "ALIAS_fromapi@test.com"
+        response = self.client.post(url, data, format="json")
+        self.assertEqual(response.status_code, 400)
 
     def test_create_alias_as_domadmin(self):
         """As DomainAdmin, try to create a new alias."""
