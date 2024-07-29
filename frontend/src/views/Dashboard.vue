@@ -10,6 +10,12 @@
     elevation="2"
     class="mt-10"
     >
+    <translate tag="p">
+      This page presents a summary of your Kalabash server's status and
+      some useful information about the product.
+    </translate>
+    <p>
+    </p>
   </v-alert>
 </div>
 </template>

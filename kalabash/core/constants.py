@@ -22,25 +22,9 @@ ADMIN_GROUPS = [
 ]
 
 LANGUAGES = (
-    ("br", u"breton"),
-    ("cs", u"čeština"),
-    ("de", u"deutsch"),
     ("en", u"english"),
-    ("el", u"ελληνικά"),
-    ("es", u"español"),
-    ("fi", "Suomalainen"),
     ("fr", u"français"),
-    ("it", u"italiano"),
-    ("ja", u"日本の"),
-    ("nl", u"nederlands"),
     ("pt", u"português"),
-    ("pt-br", u"português (BR)"),
-    ("pl", u"polski"),
-    ("ro", u"Română"),
-    ("ru", u"русский"),
-    ("sv", u"svenska"),
-    ("tr", u"türk"),
-    ("zh-hant", u"中文（台灣）"),
 )
 
 
