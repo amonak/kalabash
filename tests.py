@@ -19,15 +19,20 @@ class DeployTest(unittest.TestCase):
     dbport = PORT
     projname = "kalabash_test"
     dbuser = DB == "mysql" and "kalabash" or "postgres"
-    dbpassword = DB == "mysql" and "kalabash" or ""
+    dbpassword = DB == "mysql" and "kalabash" or "postgres"
 
     def setUp(self):
         self.workdir = tempfile.mkdtemp()
 
     def test_silent(self):
-        dburl = "default:%s://%s:%s@%s:%s/%s" \
-            % (self.dbtype, self.dbuser, self.dbpassword,
-               self.dbhost, self.dbport, self.projname)
+        dburl = "default:%s://%s:%s@%s:%s/%s" % (
+            self.dbtype,
+            self.dbuser,
+            self.dbpassword,
+            self.dbhost,
+            self.dbport,
+            "kalabash",
+        )
         cmd = (
             "kalabash-admin.py deploy --collectstatic "
             "--dburl %s --domain %s --admin-username admin %s"

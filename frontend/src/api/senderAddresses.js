@@ -3,16 +3,18 @@ import repository from './repository'
 const resource = 'senderaddresses'
 
 export default {
-  getAll () {
+  getAll() {
     return repository.get(`${resource}/`)
   },
-  getAllForMailbox (mailboxId) {
-    return repository.get(`${resource}/`, { params: { mailbox: mailboxId } })
+  getAllForMailbox(mailboxId) {
+    return repository.get(`${resource}/`, {
+      params: { mailbox: mailboxId },
+    })
   },
-  create (data) {
+  create(data) {
     return repository.post(`${resource}/`, data)
   },
-  delete (addressId) {
+  delete(addressId) {
     return repository.delete(`${resource}/${addressId}/`)
-  }
+  },
 }

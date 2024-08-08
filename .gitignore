@@ -34,3 +34,5 @@ test_project/kalabash.db
 .ash_history
 kalabash.kdev4
 .kateproject
+test_project/cert.crt
+test_project/cert.key

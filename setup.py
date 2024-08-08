@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     def local_scheme(version):
         """Skip the local version (eg. +xyz of 0.6.1.dev4+gdf99fe2)
-            to be able to upload to Test PyPI"""
+        to be able to upload to Test PyPI"""
         return ""
 
     setup(
@@ -74,7 +74,8 @@ if __name__ == "__main__":
         ],
         keywords="email",
         packages=find_packages(
-            exclude=["doc", "test_data", "test_project", "frontend"]),
+            exclude=["doc", "test_data", "test_project", "frontend"]
+        ),
         include_package_data=True,
         zip_safe=False,
         scripts=["bin/kalabash-admin.py"],
