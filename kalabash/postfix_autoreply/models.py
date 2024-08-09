@@ -10,7 +10,7 @@ from kalabash.admin.models import Mailbox
 class ARmessage(models.Model):
     """Auto reply messages."""
 
-    mbox = models.ForeignKey(Mailbox, related_name='postfix_armessage_set', on_delete=models.CASCADE)
+    mbox = models.ForeignKey(Mailbox, on_delete=models.CASCADE)
     subject = models.CharField(
         _("subject"),
         max_length=255,
