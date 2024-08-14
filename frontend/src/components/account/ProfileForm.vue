@@ -20,20 +20,6 @@
           />
           <label class="m-label">
             {{ $gettext('Language') }}
-            <p class="text-disabled">
-              {{ $gettext('Feel free to improve the translations') }}
-              <a
-                href="https://explore.transifex.com/amonak/kalabash/"
-                target="_blank"
-                >{{ $gettext('here') }}</a
-              >
-              {{ $gettext('or suggest a new language') }}
-              <a
-                href="https://github.com/amonak/kalabash/issues/new/choose"
-                target="_blank"
-                >{{ $gettext('there') }}</a
-              >
-            </p>
           </label>
           <v-autocomplete
             v-model="form.language"

@@ -1897,7 +1897,7 @@ msgid "there"
 msgstr ""
 
 #: src/views/Dashboard.vue:6
-msgid "This page is still under construction."
+msgid "This is the main Kalabash Admin Panel"
 msgstr ""
 
 #: src/components/admin/logs/MessageList.vue:45
